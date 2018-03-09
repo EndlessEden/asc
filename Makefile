@@ -1,7 +1,7 @@
 CC ?= cc
 
 CFLAGS := $(CFLAGS) -I.
-LDFLAGS := $(LDFLAGS) -Bstatic -l/usr/include/wlc/wlc.h -Bstatic -llua
+LDFLAGS := $(LDFLAGS) -Bstatic -lwlc -Bstatic -llua
 
 .PHONY: all clean
 all: asc
