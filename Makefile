@@ -1,7 +1,7 @@
 CC ?= cc
 
 CFLAGS := $(CFLAGS) -I.
-LDFLAGS := $(LDFLAGS) -Bstatic -lwlc -Wl, -Bstatic -llua -W1
+LDFLAGS := $(LDFLAGS) -Bstatic -lwlc, -Bstatic -llua
 
 .PHONY: all clean
 all: asc
