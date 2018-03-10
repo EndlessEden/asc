@@ -3,15 +3,15 @@ CC ?= cc
 CFLAGS := $(CFLAGS) -I.
 
 ifneq ("$(wildcard $(/usr/lib/libwlc.a))","")
-LDFLAGS := $(LDFLAGS) -Bstatic -lwlc
-else
 LDFLAGS := $(LDFLAGS) -lwlc
+else
+LDFLAGS := $(LDFLAGS) -Bstatic -lwlc
 endif
 
 ifneq ("$(wildcard $(/usr/lib/liblua.a))","")
-LDFLAGS := $(LDFLAGS) -Bstatic -llua
-else
 LDFLAGS := $(LDFLAGS) -llua
+else
+LDFLAGS := $(LDFLAGS) -Bstatic -llua
 endif
 
 
