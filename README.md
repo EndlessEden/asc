@@ -1,8 +1,5 @@
 # Asc
-### A simple compositor
-
-I felt like trying Wayland. There were no compositors I liked. I'd been
-wanting to try writing a WM. Hence, asc.
+### A simple wayland compositor
 
 Asc uses [wlc][wlc] for handling the boring stuff, meaning it can
 dedicate its precious lines of code to making cool stuff happen with
