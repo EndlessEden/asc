@@ -96,7 +96,7 @@ int asc_lua_set_pointer_position(lua_State *l) {
     luaL_checkinteger(l, 2),
   };
 
-  wlc_pointer_set_position(&pos);
+  wlc_pointer_set_position_v2(&pos);
 
   return 0;
 }
