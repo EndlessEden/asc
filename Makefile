@@ -3,10 +3,17 @@ CC ?= cc
 CFLAGS := $(CFLAGS) -I.
 
 ifneq ("$(wildcard $(/usr/lib/libwlc.a))","")
-LDFLAGS := $(LDFLAGS) -Bstatic -lwlc -Bstatic -llua
+LDFLAGS := $(LDFLAGS) -Bstatic -lwlc
 else
-LDFLAGS := $(LDFLAGS) -lwlc -Bstatic -llua
+LDFLAGS := $(LDFLAGS) -lwlc
 endif
+
+ifneq ("$(wildcard $(/usr/lib/libwlc.a))","")
+LDFLAGS := $(LDFLAGS) -Bstatic -llua
+else
+LDFLAGS := $(LDFLAGS) -llua
+endif
+
 
 .PHONY: all clean
 all: asc
