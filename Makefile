@@ -8,7 +8,7 @@ else
 LDFLAGS := $(LDFLAGS) -lwlc
 endif
 
-ifneq ("$(wildcard $(/usr/lib/libwlc.a))","")
+ifneq ("$(wildcard $(/usr/lib/liblua.a))","")
 LDFLAGS := $(LDFLAGS) -Bstatic -llua
 else
 LDFLAGS := $(LDFLAGS) -llua
