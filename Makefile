@@ -22,11 +22,11 @@ clean:
 	-rm *.o
 
 asc: asc.o lua_api.o lua/lowlevel.o lua/root.o lua/consts.o
-	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+	$(CC) -static -o $@ $^ $(CFLAGS) $(LDFLAGS) -lc -lstdc++
 	
 lua_api.o: lua_api.c lua_api.h lua/lowlevel.h lua/root.h lua/consts.h
-	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS) -lc -lstdc++
 
 %.o: %.c %.h
-	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS) -lc -lstdc++
 
