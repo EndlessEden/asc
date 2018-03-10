@@ -25,8 +25,8 @@ asc: asc.o lua_api.o lua/lowlevel.o lua/root.o lua/consts.o
 	$(CC) -static -o $@ $^ $(CFLAGS) $(LDFLAGS)
 	
 lua_api.o: lua_api.c lua_api.h lua/lowlevel.h lua/root.h lua/consts.h
-	$(CC) -static -o $@ -c $< $(CFLAGS) $(LDFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS)
 
 %.o: %.c %.h
-	$(CC) -static -o $@ -c $< $(CFLAGS) $(LDFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS)
 
