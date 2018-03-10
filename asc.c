@@ -136,7 +136,7 @@ int main(int argc, char *argv[]) {
   wlc_set_output_created_cb(output_created);
   wlc_set_view_created_cb(view_created);
   wlc_set_view_focus_cb(view_focus);
-  wlc_set_pointer_motion_cb(pointer_motion);
+  wlc_set_pointer_motion_cb_v2(pointer_motion);
 
   if (!wlc_init())
     return EXIT_FAILURE;
