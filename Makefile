@@ -1,7 +1,12 @@
 CC ?= cc
 
 CFLAGS := $(CFLAGS) -I.
+
+ifneq ("$(wildcard $(/usr/lib/libwlc.a))","")
 LDFLAGS := $(LDFLAGS) -Bstatic -lwlc -Bstatic -llua
+else
+LDFLAGS := $(LDFLAGS) -lwlc -Bstatic -llua
+endif
 
 .PHONY: all clean
 all: asc
